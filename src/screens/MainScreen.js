@@ -98,9 +98,9 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   contentContainer: {
-    width: "80%",
-    marginTop: "5%",
-    height: "80%",
+    width: "85%",
+    marginTop: "2%",
+    height: "100%",
     backgroundColor: "#00000080",
     alignSelf: "center",
 
