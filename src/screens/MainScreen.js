@@ -6,10 +6,11 @@ import {
   StatusBar,
   SafeAreaView,
   Platform,
-  TextInput,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import Search from "../components/Search";
+import PlaylistDetail from "../components/PlaylistDetail";
 
 function MainScreen() {
   return (
@@ -18,12 +19,13 @@ function MainScreen() {
       style={styles.gradient}
       start={[1.5, 0.4]}
     >
+      <ExpoStatusBar backgroundColor="#00000090" />
       <SafeAreaView style={styles.container}>
         {/* BEGINNING OF SEARCH BAR */}
         <Search />
         {/* END OF SEARCHBAR */}
         <View style={styles.contentContainer}>
-          <Text>Main screen!</Text>
+          <PlaylistDetail />
         </View>
       </SafeAreaView>
     </LinearGradient>
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
   },
 
   contentContainer: {
-    width: "85%",
+    width: "90%",
     marginTop: "2%",
     height: "100%",
     backgroundColor: "#00000080",

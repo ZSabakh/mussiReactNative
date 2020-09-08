@@ -6,7 +6,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { StatusBar } from "expo-status-bar";
 
 const Tab = createBottomTabNavigator();
 
@@ -54,7 +53,7 @@ function Navigation() {
 function App() {
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar backgroundColor="#00000090" />
+      {/* <StatusBar backgroundColor="#00000090" /> */}
       <NavigationContainer>
         <Navigation />
       </NavigationContainer>
