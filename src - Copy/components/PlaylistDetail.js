@@ -7,11 +7,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import { useLinkProps } from "@react-navigation/native";
 
-function PlaylistDetail(props) {
+function PlaylistDetail() {
   return (
-    <TouchableOpacity onPress={props.onPress}>
+    <TouchableOpacity>
       <View style={styles.detailContainer}>
         <ImageBackground
           style={styles.detailImage}

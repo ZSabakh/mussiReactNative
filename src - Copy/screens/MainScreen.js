@@ -12,8 +12,7 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import Search from "../components/Search";
 import PlaylistDetail from "../components/PlaylistDetail";
 
-function MainScreen(props) {
-  console.log(props.navigation);
+function MainScreen() {
   return (
     <LinearGradient
       colors={["#955EAA", "#A87B93", "#B08888"]}
@@ -26,9 +25,7 @@ function MainScreen(props) {
         <Search />
         {/* END OF SEARCHBAR */}
         <View style={styles.contentContainer}>
-          <PlaylistDetail
-            onPress={() => props.navigation.navigate("PlayList")}
-          />
+          <PlaylistDetail />
         </View>
       </SafeAreaView>
     </LinearGradient>
