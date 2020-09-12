@@ -6,10 +6,12 @@ import {
   StatusBar,
   SafeAreaView,
   Platform,
+  Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import Search from "../components/Search";
+import SongDetail from "../components/SongDetail";
 
 function PlayListScreen() {
   return (
@@ -23,7 +25,9 @@ function PlayListScreen() {
         {/* BEGINNING OF SEARCH BAR */}
         <Search />
         {/* END OF SEARCHBAR */}
-        <View style={styles.contentContainer}></View>
+        <View style={styles.contentContainer}>
+          <SongDetail />
+        </View>
       </SafeAreaView>
     </LinearGradient>
   );

@@ -6,24 +6,6 @@ import PlayListScreen from "../screens/PlayListScreen";
 
 const Stack = createStackNavigator();
 
-const MainStackNavigator = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Main" component={MainScreen} />
-      <Stack.Screen
-        name="PlayList"
-        component={PlayListScreen}
-        // options={{ header: null }}
-      />
-    </Stack.Navigator>
-  );
-};
-
 const HomeStackNavigator = () => {
   return (
     <Stack.Navigator
@@ -31,12 +13,20 @@ const HomeStackNavigator = () => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const MainStackNavigator = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen name="Main" component={MainScreen} />
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        // options={{ header: null }}
-      />
+      <Stack.Screen name="PlayList" component={PlayListScreen} />
     </Stack.Navigator>
   );
 };
