@@ -1,17 +1,18 @@
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
-
-import { Logo } from "react";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 function SongDetail(props) {
   return (
-    <View style={styles.songContainer}>
-      <Image style={styles.songImage} source={Logo} />
-      <View style={styles.songTextContainer}>
-        <Text style={styles.songText1}>Song Title</Text>
-        <Text style={styles.songText2}>Song Info</Text>
+    <TouchableOpacity onPress={props.songPlay}>
+      <View style={styles.songContainer}>
+        <Image style={styles.songImage} source={props.songInfo.image} />
+        <View style={styles.songTextContainer}>
+          <Text style={styles.songText1}>{props.songInfo.title}</Text>
+          <Text style={styles.songText2}>{props.songInfo.info}</Text>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -24,14 +25,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 17,
     borderTopWidth: 3,
-    borderColor: "red",
+    borderColor: "#E02500",
     borderBottomWidth: 3,
   },
   songImage: {
     width: 110,
     height: 100,
-    backgroundColor: "red",
-    borderColor: "blue",
+    borderColor: "rgba(151, 109, 171, 0.33)",
     borderWidth: 3,
     marginVertical: 5,
   },

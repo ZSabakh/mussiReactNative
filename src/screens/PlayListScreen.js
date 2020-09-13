@@ -12,7 +12,15 @@ import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import Search from "../components/Search";
 import SongDetail from "../components/SongDetail";
+import { Audio } from "expo-av";
 
+const songs = [
+  {
+    title: "Song title",
+    info: "Song info",
+    image: require("../../assets/music.jpg"),
+  },
+];
 function PlayListScreen() {
   return (
     <LinearGradient
@@ -26,7 +34,7 @@ function PlayListScreen() {
         <Search />
         {/* END OF SEARCHBAR */}
         <View style={styles.contentContainer}>
-          <SongDetail />
+          <SongDetail songInfo={songs[0]} />
         </View>
       </SafeAreaView>
     </LinearGradient>
