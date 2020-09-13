@@ -6,7 +6,7 @@ function HomeScreen(props) {
   console.log(props.navigation);
   return (
     <View style={styles.container}>
-      <Text>Why hello beautiful</Text>
+      <Text>Hello !</Text>
       <Button
         title="Go to main !"
         onPress={() => {

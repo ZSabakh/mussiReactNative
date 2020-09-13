@@ -19,6 +19,7 @@ const songs = [
     title: "Song title",
     info: "Song info",
     image: require("../../assets/music.jpg"),
+    play: () => console.log("touched"),
   },
 ];
 function PlayListScreen() {
