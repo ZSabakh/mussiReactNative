@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 function SongDetail(props) {
   return (
-    <TouchableOpacity onPress={props.songInfo.play}>
+    <TouchableOpacity onPress={props.onPress}>
       <View style={styles.songContainer}>
         <Image style={styles.songImage} source={props.songInfo.image} />
         <View style={styles.songTextContainer}>
