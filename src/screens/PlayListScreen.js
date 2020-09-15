@@ -13,6 +13,7 @@ import { Audio } from "expo-av";
 import { LinearGradient } from "expo-linear-gradient";
 import Search from "../components/Search";
 import SongDetail from "../components/SongDetail";
+import { FlatList } from "react-native-gesture-handler";
 
 const songs = [
   {
@@ -20,6 +21,12 @@ const songs = [
     info: "Workout song",
     image: require("../../assets/music.jpg"),
     uri: "https://www.mboxdrive.com/biceps.mp3",
+  },
+  {
+    title: "The Lawyer - I wanna MMM",
+    info: "Mmmmm...",
+    image: require("../../assets/music.jpg"),
+    uri: "https://www.mboxdrive.com/mmii.mp3",
   },
 ];
 
@@ -114,6 +121,17 @@ export default class PlayListScreen extends React.Component {
     }
   };
 
+  handleCustomTrack = async (songIndex) => {
+    let { playbackInstance, currentIndex } = this.state;
+    if (playbackInstance) {
+      await playbackInstance.unloadAsync();
+      this.setState({
+        currentIndex: songIndex,
+      });
+      this.loadAudio();
+    }
+  };
+
   render() {
     return (
       <LinearGradient
@@ -126,7 +144,33 @@ export default class PlayListScreen extends React.Component {
           <Search />
           {/* END OF SEARCHBAR */}
           <View style={styles.contentContainer}>
-            <SongDetail songInfo={songs[0]} onPress={this.handlePlayPause} />
+            <FlatList
+              data={songs}
+              keyExtractor={(song) => song.uri}
+              renderItem={({ item, index }) => {
+                return (
+                  <SongDetail
+                    songInfo={item}
+                    onPress={() => {
+                      if (!this.state.isPlaying) {
+                        this.handlePlayPause();
+                        this.handleCustomTrack(index);
+                        console.log("case 1");
+                      } else if (
+                        this.state.isPlaying &&
+                        this.state.currentIndex == index
+                      ) {
+                        this.handlePlayPause();
+                        console.log("case 2");
+                      } else {
+                        this.handleCustomTrack(index);
+                        console.log("case 3");
+                      }
+                    }}
+                  />
+                );
+              }}
+            />
           </View>
         </SafeAreaView>
       </LinearGradient>

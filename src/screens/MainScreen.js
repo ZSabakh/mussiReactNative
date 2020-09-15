@@ -13,7 +13,6 @@ import Search from "../components/Search";
 import PlaylistDetail from "../components/PlaylistDetail";
 
 function MainScreen(props) {
-  console.log(props.navigation);
   return (
     <LinearGradient
       colors={["#955EAA", "#A87B93", "#B08888"]}
